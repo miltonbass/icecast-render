@@ -10,8 +10,6 @@
         <client-timeout>30</client-timeout>
         <header-timeout>15</header-timeout>
         <source-timeout>10</source-timeout>
-        <burst-on-connect>1</burst-on-connect>
-        <burst-size>65535</burst-size>
     </limits>
     
     <authentication>
@@ -24,7 +22,6 @@
     <hostname>0.0.0.0</hostname>
     <listen-socket>
         <port>8000</port>
-        <bind-address>0.0.0.0</bind-address>
     </listen-socket>
     
     <fileserve>1</fileserve>
@@ -40,15 +37,10 @@
     <logging>
         <accesslog>access.log</accesslog>
         <errorlog>error.log</errorlog>
-        <loglevel>3</loglevel>
-        <logsize>10000</logsize>
+        <loglevel>2</loglevel>
     </logging>
     
     <security>
         <chroot>0</chroot>
-        <changeowner>
-            <user>icecast2</user>
-            <group>icecast2</group>
-        </changeowner>
     </security>
 </icecast>
