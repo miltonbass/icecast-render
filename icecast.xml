@@ -32,4 +32,8 @@
         <errorlog>error.log</errorlog>
         <loglevel>2</loglevel>
     </logging>
+    
+    <security>
+        <chroot>0</chroot>
+    </security>
 </icecast>
