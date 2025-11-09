@@ -35,5 +35,9 @@
     
     <security>
         <chroot>0</chroot>
+        <changeowner>
+            <user>icecastuser</user>
+            <group>icecastuser</group>
+        </changeowner>
     </security>
 </icecast>
