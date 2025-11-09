@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<icecast>
+    <location>Render Cloud</location>
+    <admin>radio@render.com</admin>
+    
+    <limits>
+        <clients>50</clients>
+        <sources>3</sources>
+    </limits>
+    
+    <authentication>
+        <source-password>render_source_123</source-password>
+        <admin-password>render_admin_123</admin-password>
+    </authentication>
+    
+    <hostname>0.0.0.0</hostname>
+    <listen-socket>
+        <port>8000</port>
+    </listen-socket>
+    
+    <security>
+        <chroot>0</chroot>
+        <!-- Remover changeowner para evitar problemas -->
+    </security>
+</icecast>
