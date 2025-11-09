@@ -2,18 +2,24 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Instalar Icecast
 RUN apt-get update && \
     apt-get install -y icecast2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Configuración mínima sin usuarios personalizados
-COPY icecast-simple.xml /etc/icecast2/icecast.xml
-
 # Crear directorio de logs
-RUN mkdir -p /var/log/icecast2
+RUN mkdir -p /var/log/icecast2 && \
+    chown -R icecast2:icecast2 /var/log/icecast2
+
+# Copiar configuración
+COPY icecast.xml /etc/icecast2/icecast.xml
+
+# Asegurar permisos
+RUN chown -R icecast2:icecast2 /etc/icecast2
 
 EXPOSE 8000
 
-# Ejecutar directamente (aceptando ejecutar como root para testing)
+# Ejecutar como usuario icecast2
+USER icecast2
 CMD ["icecast2", "-c", "/etc/icecast2/icecast.xml"]

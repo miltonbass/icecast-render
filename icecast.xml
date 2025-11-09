@@ -4,12 +4,9 @@
     <admin>radio@render.com</admin>
     
     <limits>
-        <clients>50</clients>
-        <sources>3</sources>
+        <clients>100</clients>
+        <sources>5</sources>
         <threadpool>5</threadpool>
-        <client-timeout>30</client-timeout>
-        <header-timeout>15</header-timeout>
-        <source-timeout>10</source-timeout>
     </limits>
     
     <authentication>
@@ -24,14 +21,10 @@
         <port>8000</port>
     </listen-socket>
     
-    <fileserve>1</fileserve>
-    
     <paths>
-        <basedir>/usr/share/icecast2</basedir>
         <logdir>/var/log/icecast2</logdir>
         <webroot>/usr/share/icecast2/web</webroot>
         <adminroot>/usr/share/icecast2/web</adminroot>
-        <alias source="/" destination="/status.xsl"/>
     </paths>
     
     <logging>
@@ -39,8 +32,4 @@
         <errorlog>error.log</errorlog>
         <loglevel>2</loglevel>
     </logging>
-    
-    <security>
-        <chroot>0</chroot>
-    </security>
 </icecast>
